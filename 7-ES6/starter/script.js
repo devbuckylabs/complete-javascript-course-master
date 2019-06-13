@@ -273,6 +273,314 @@ new Person('Mike').myFriends5(friends);*/
 
 
 
+//******************************//
+//*** LECTURE: Destructuring ***//
+//******************************//
+
+
+/*//ES5
+var john = ['John',26];
+//var name = john[0];
+//var age = john[1];
+
+
+//ES6
+
+const [name, age] = ['Mike',30];
+console.log(name);
+console.log(age);
+
+//
+
+const obj = {
+    
+    firstName: 'John',
+    lastName: 'Smith'
+    
+};
+
+
+const {firstName, lastName} = obj;
+console.log(firstName);
+console.log(lastName);
+
+const {firstName: a,lastName: b} = obj;
+console.log(a);
+console.log(b);
+
+
+//
+
+const calculateRetirement = function(year){
+    
+    const age2 = new Date().getFullYear() - year;
+    return [age, 65-age];
+
+};
+
+
+const [age2,retirementAge] = calculateRetirement(1990);
+console.log(age2);
+console.log(retirementAge);*/
+
+
+
+
+//******************************//
+//*** LECTURE: Arrays in ES6 ***//
+//******************************//
+
+//ES5
+
+/*var boxes5 = document.querySelectorAll('.box');
+
+
+var boxesArr5 = Array.prototype.slice.call(boxes5);*/
+/*
+boxesArr5.forEach(function(cur){
+   
+    cur.style.backgroundColor = 'dodgerblue';
+    
+});
+*/
+ 
+
+//ES6
+
+/*const boxes6 = document.querySelectorAll('.box');
+const boxesArr6 = Array.from(boxes6);
+
+boxesArr6.forEach(cur => cur.style.backgroundColor = 'dodgerblue');*/
+
+//
+
+//ES5
+
+/*for(var i=0; i < boxesArr5.length;i++){
+    
+    if(boxesArr5[i].className === 'box blue')continue;
+    
+    boxesArr5[i].textContent = 'Im changed to Blue!';
+    
+}*/
+
+
+//ES6
+
+/*
+for(const cur of boxesArr6){
+    
+    if(cur.className === 'box blue')continue;
+    
+    cur.textContent = 'Im changed to Blue!';
+    
+}
+*/
+
+//
+
+//ES5
+
+/*
+var ages = [10,14,8,15,24,11,30];
+
+var full = ages.map(function(cur){
+   
+    return cur >= 18;
+    
+});
+
+console.log(full);
+//console.log(full.indexOf(true));
+//console.log(ages[full.indexOf(true)]);
+
+
+
+//ES6
+// Only finds first element of occurence
+console.log(ages.findIndex(cur => cur >= 18));
+// Only finds first element of occurence
+console.log(ages.find(cur => cur >= 18));
+
+
+
+*/
+
+
+//******************************//
+// LECTURE: The Spread Operator //
+//******************************//
+
+//ES5
+/*
+var addFourAges = function(a,b,c,d){
+    
+    return a+b+c+d;
+} 
+
+
+var ages=[18,21,56,42];
+
+var sum1 = addFourAges(18,21,30,42);
+console.log(sum1);
+
+var sum2 = addFourAges.apply(null,ages);
+console.log(sum2);
+
+//ES6
+
+const sum3 = addFourAges(...ages);
+console.log(sum3);
+*/
+
+//
+
+/*
+const familySmith = ['John','Jane','Mark'];
+const familyMiller = ['Mary','Bob','Ann'];
+
+const bigFamily = [...familySmith,'Lyla',...familyMiller];
+console.log(bigFamily);
+*/
+
+//
+
+/*
+const head = document.querySelector('h1');
+const boxes =document.querySelectorAll('.box');
+
+const all = [head,...boxes];
+const allEL = Array.from(all);
+for(const cur of allEL){
+    cur.style.color = 'red';
+}
+
+*/
+
+
+//******************************//
+//** LECTURE: Rest Paramaters **//
+//******************************//
+
+
+/*
+function isFullAge5(){
+
+    var argArr = Array.prototype.slice.call(arguments);
+    argArr.forEach(function(cur){
+    
+        console.log((2016-cur) >= 18);
+        
+    });
+   
+}
+
+isFullAge5(1990,1999,1983);
+isFullAge5(1990,1999,1983,2001,1957);
+*/
+
+//ES6
+
+/*
+function isFullAge6(...years){
+    
+    years.forEach(cur => console.log((2016-cur) >= 18))
+    
+} 
+
+isFullAge6(1990,1999,1983);
+isFullAge6(1990,1999,1983,2001,1957);
+*/
+
+
+
+//
+
+/*
+function isFullAge5(limit){
+
+    var argArr = Array.prototype.slice.call(arguments,1);
+    argArr.forEach(function(cur){
+    
+        console.log((2016-cur) >= limit);
+        
+    });
+   
+}
+
+isFullAge5(18,1990,1999,1983);
+isFullAge5(18,1990,1999,1983,2001,1957);
+*/
+
+
+//ES6
+
+/*
+function isFullAge6(limit, ...years){
+    
+    years.forEach(cur => console.log((2016-cur) >= limit))
+    
+} 
+
+isFullAge6(18,1990,1999,1983);
+isFullAge6(18,1990,1999,1983,2001,1957);*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
